@@ -1,4 +1,4 @@
-export EKS_CLUSTER_NAME="eksworkshop-eksctl"
+export EKS_CLUSTER_NAME="eksdemo-eksctl"
 export REPOSITORY_URI="626499166183.dkr.ecr.ap-southeast-1.amazonaws.com/eksdemo"
 export TAG=$(Build.BuildId)
 

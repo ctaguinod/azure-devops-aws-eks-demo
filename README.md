@@ -4,7 +4,7 @@ Azure Devops Build and Release Pipeline Demo to AWS EKS Demo.
 
 ## Solution Overview
 - Kubernetes Cluster: [AWS EKS](https://aws.amazon.com/eks/) deployed using [**eksctl**](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html)
-- CI/CD: Azure DevOps - ![diagram](./AzureDevOps_EKS.png)
+- CI/CD: Azure DevOps - ![Azure DevOps Diagram](./AzureDevOps_EKS.png)
 - Source Code Management: [Github](https://github.com/ctaguinod/azure-devops-aws-eks-demo)
 - Simple/Sample app from AWS (go lang)
 - Docker Container Registry: [AWS ECR](https://aws.amazon.com/ecr/)
@@ -73,6 +73,18 @@ eksctl scale nodegroup --cluster=eksdemo-eksctl --name=eksdemo-nodegroup --nodes
 
 1. Create Service Connection to AWS Account
 2. Install [AWS Toolkit for Azure DevOps](https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.aws-vsts-tools&targetId=f42bfb7d-8d11-429e-ab7c-4f326dd3c4c4&utm_source=vstsproduct&utm_medium=ExtHubManageList)
+3. Create Build Pipeline and link Github Repository.
+- ![build_pipeline_01](./azure_devops/build_pipeline_01.png)
+- ![build_pipeline_02](./azure_devops/build_pipeline_02.png)
+- ![build_pipeline_03](./azure_devops/build_pipeline_03.png)
+- ![build_pipeline_04](./azure_devops/build_pipeline_04.png)
+- ![build_pipeline_05](./azure_devops/build_pipeline_05.png)
+4. Create Release Pipeline.
+- ![release_pipeline_01](./azure_devops/release_pipeline_01.png)
+- ![release_pipeline_02](./azure_devops/release_pipeline_02.png)
+- ![release_pipeline_03](./azure_devops/release_pipeline_03.png)
+- ![release_pipeline_04](./azure_devops/release_pipeline_04.png)
+
 
 ## Some Useful commands
 
@@ -81,10 +93,5 @@ eksctl scale nodegroup --cluster=eksdemo-eksctl --name=eksdemo-nodegroup --nodes
 kubectl get nodes
 kubectl get pods -o wide
 kubectl get deployment hello-k8s -o wide
-kubectl get services hello-k8s -o wide
-```
-
-### eksctl 
-```
-
+kubectl get services hello-k8s -o wide      # Get Load Balaancer Endpoint
 ```
